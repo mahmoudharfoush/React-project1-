@@ -145,7 +145,7 @@ if(loeader){
    <Input errors={errors} id={'password'} title={'user password'} type={'password'} name={'password'} handelData={handelData} />
 
   <div className="mb-3">
-  <input type='submit' className='form-control' vlaue=' Add user' />
+  <input type='submit' className='form-control' value=' Add user' />
   </div>
   
 </form>

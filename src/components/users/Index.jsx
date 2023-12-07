@@ -123,7 +123,7 @@ export default function Index() {
       </div>
     </div>
     <div className="col py-3">
-     <table class="table">
+     <table className="table">
   <thead>
     <tr>
       <th>#</th>

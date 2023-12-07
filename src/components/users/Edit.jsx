@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import  {toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -22,6 +23,7 @@ export default function Edit() {
 const {id} = useParams('id')
   const getUser = async ()=>{
     const {data} = await axios.get(`https://crud-users-gold.vercel.app/users/${id}`,user)
+    console.log(data);
     setUser(data.user);
   } 
   useEffect( ()=>{
@@ -151,11 +153,11 @@ if(loeader){
     {errorBack && <p className='text text-danger'>{errorBack}</p>}
     <form onSubmit={sendData} >
    <Input errors={errors} id={'username'} title={'user name'} value={user.name} type={'text'} name={'name'} handelData={handelData} />
-   <Input errors={errors} id={'email'} title={'user email'} value={user.name} type={'email'} name={'email'} handelData={handelData} />
-   <Input errors={errors} id={'password'} title={'user password'} value={user.name} type={'password'} name={'password'} handelData={handelData} />
+   <Input errors={errors} id={'email'} title={'user email'} value={user.email} type={'email'} name={'email'} handelData={handelData} />
+   <Input errors={errors} id={'password'} title={'user password'} value={user.password} type={'password'} name={'password'} handelData={handelData} />
 
   <div className="mb-3">
-  <input type='submit' className='form-control' vlaue=' Add user' />
+  <input type='submit' className='form-control' value='Add user' />
   </div>
   
 </form>
